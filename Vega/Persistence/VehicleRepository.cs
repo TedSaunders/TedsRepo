@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using vega.Core;
+using Vega.Models;
 using Vega.Persistence;
 
 namespace vega.Persistence
@@ -11,6 +12,10 @@ namespace vega.Persistence
         public VehicleRepository(VegaDbContext context)
         {
             this.context = context;
+        }
+
+        public VehicleRepository()
+        {
         }
 
         public async Task<Vehicle> GetVehicle(int id, bool includeRelated = true)
